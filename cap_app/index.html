@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain Guard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="flex flex-col min-h-screen overflow-hidden relative">
+        <header class="p-6 lg:px-12 flex justify-between items-center z-20 w-full">
+            <div class="flex-1">
+                <div class="relative group">
+                    <a href="#" onclick="toggleMenu('about-menu', event)" class="text-slate-600 hover:text-teal-600 font-medium">About</a>
+                    <div id="about-menu" class="absolute hidden group-hover:block menu-dropdown w-96 bg-white p-6 rounded-lg shadow-lg border border-slate-100 mt-2 text-left">
+                        <p class="text-sm text-slate-600 mb-4">
+                            Chain Guard is an intelligent, end-to-end monitoring system designed to close critical gaps in supply chain compliance. Our platform ensures on-time deliveries, maintains strict cold-chain integrity, and verifies all licensing and documentation. Through digitized workflows and real-time tracking, Chain Guard provides enhanced transparency for managers, helps vendors meet regulatory standards, and gives administrators powerful oversight tools.
+                        </p>
+                        <h3 class="font-bold text-slate-800 mb-2">Core Compliance Pillars</h3>
+                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-2 mb-4">
+                            <li><span class="font-semibold">License Compliance:</span> Tracks vehicle, driver, and permit validity with timestamped verifications.</li>
+                            <li><span class="font-semibold">Cold-Chain Compliance:</span> Creates a unique, auditable record for every temperature log and deviation event.</li>
+                            <li><span class="font-semibold">Documentation Compliance:</span> Assigns a unique reference to each uploaded document and its verification status.</li>
+                            <li><span class="font-semibold">Safety & Hygiene Compliance:</span> Logs every sanitation check and inspection for a complete safety record.</li>
+                        </ul>
+                        <p class="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-200">
+                            Developed by <a href="https://www.facebook.com/mewmarwan" target="_blank" class="text-teal-600 hover:underline">Marwan Hossain</a>, Department of Software Engineering, Batch 41.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-1 flex justify-center space-x-8">
+                <div class="relative group">
+                    <a href="#" onclick="toggleMenu('industry-menu', event)" class="text-slate-600 hover:text-teal-600 font-medium">Industry</a>
+                    <div id="industry-menu" class="absolute hidden group-hover:block menu-dropdown w-64 bg-white p-4 rounded-lg shadow-lg border border-slate-100 mt-2 text-left">
+                        <h3 class="font-bold text-slate-800 mb-2">Industries We Serve</h3>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><a href="#" class="hover:text-teal-600">Pharmaceuticals & Healthcare</a></li>
+                            <li><a href="#" class="hover:text-teal-600">Food & Beverage</a></li>
+                            <li><a href="#" class="hover:text-teal-600">High-Value Goods</a></li>
+                            <li><a href="#" class="hover:text-teal-600">General Logistics</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a href="#" onclick="toggleMenu('services-menu', event)" class="text-slate-600 hover:text-teal-600 font-medium">Services</a>
+                    <div id="services-menu" class="absolute hidden group-hover:block menu-dropdown w-64 bg-white p-4 rounded-lg shadow-lg border border-slate-100 mt-2 text-left">
+                        <h3 class="font-bold text-slate-800 mb-2">Our Core Services</h3>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><a href="#" class="hover:text-teal-600">Real-Time Shipment Tracking</a></li>
+                            <li><a href="#" class="hover:text-teal-600">Cold-Chain Monitoring</a></li>
+                            <li><a href="#" class="hover:text-teal-600">License & Document Verification</a></li>
+                            <li><a href="#" class="hover:text-teal-600">Automated Compliance Reporting</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a href="#" onclick="toggleMenu('contact-menu', event)" class="text-slate-600 hover:text-teal-600 font-medium">Contact</a>
+                    <div id="contact-menu" class="absolute hidden group-hover:block menu-dropdown w-64 bg-white p-4 rounded-lg shadow-lg border border-slate-100 mt-2 text-left">
+                        <h3 class="font-bold text-slate-800 mb-2">Connect with the Developer</h3>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><a href="mailto:marwanhossain.official@gmail.com" class="text-teal-600 hover:underline">Email</a></li>
+                            <li><a href="https://www.linkedin.com/in/marwan-hossain-109bb5296" target="_blank" class="text-teal-600 hover:underline">LinkedIn</a></li>
+                            <li><a href="https://marwanhossain.medium.com/" target="_blank" class="text-teal-600 hover:underline">Medium</a></li>
+                            <li><a href="https://github.com/MarwanHossain" target="_blank" class="text-teal-600 hover:underline">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="flex-1 flex justify-end">
+                <a href="#" onclick="navigateTo('login.html')" class="btn-primary">Sign In</a>
+            </div>
+        </header>
+        <main class="flex-grow flex items-center justify-center text-center z-10">
+            <div>
+                <h1 class="text-6xl lg:text-7xl font-bold text-slate-800">Chain Guard</h1>
+                <p class="text-xl lg:text-2xl text-slate-500 mt-4">A Supply Chain Compliance System</p>
+            </div>
+        </main>
+        <!-- Background SVG -->
+        <div class="absolute inset-0 z-0 opacity-50">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="pattern-circles" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse">
+                        <circle id="pattern-circle" cx="20" cy="20" r="2" fill="#cbd5e1"></circle>
+                    </pattern>
+                </defs>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
+                <path d="M 600 0 C 800 100, 900 300, 1200 200 L 1200 0 Z" fill="#0d9488" opacity="0.05"></path>
+                <path d="M -100 800 C 100 700, 200 500, 500 600 L -100 900 Z" fill="#475569" opacity="0.05"></path>
+            </svg>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

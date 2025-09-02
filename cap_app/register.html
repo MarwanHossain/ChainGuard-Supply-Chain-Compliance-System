@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Chain Guard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Page Container: Register -->
+    <div class="flex items-center justify-center min-h-screen">
+         <div class="w-full max-w-md p-8 space-y-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-slate-800">Create Account</h1>
+                <p class="text-slate-500 mt-2">Join the Chain Guard System</p>
+            </div>
+            <div class="card">
+                <form id="registerForm" class="space-y-6">
+                    <div><label for="name-register" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label><input type="text" id="name-register" class="input-field" placeholder="John Doe" required></div>
+                    <div><label for="email-register" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label><input type="email" id="email-register" class="input-field" placeholder="you@example.com" required></div>
+                    <div><label for="password-register" class="block text-sm font-medium text-slate-700 mb-1">Password</label><input type="password" id="password-register" class="input-field" placeholder="••••••••" required></div>
+                    <div><label for="role-register" class="block text-sm font-medium text-slate-700 mb-1">Register as</label><select id="role-register" class="input-field"><option value="manager">Logistic Manager</option><option value="vendor">Transport Vendor</option><option value="admin">System Admin</option></select></div>
+                    <button type="submit" class="w-full btn-primary">Register</button>
+                </form>
+            </div>
+            <p class="text-center text-sm text-slate-600">Already have an account? <a href="#" onclick="navigateTo('login.html')" class="font-medium text-teal-600 hover:underline">Login here</a></p>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="alertModal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-overlay"><div class="card w-full max-w-sm text-center"><p id="alertMessage" class="mb-6 text-lg text-slate-700"></p><button onclick="toggleModal('alertModal', false)" class="btn-primary">OK</button></div></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

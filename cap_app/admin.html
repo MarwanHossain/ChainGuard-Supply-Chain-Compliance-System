@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Chain Guard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dashboard Template -->
+    <div class="w-full min-h-screen">
+        <div class="flex">
+            <!-- Sidebar -->
+            <div class="w-64 bg-white border-r border-slate-200 p-6 flex flex-col h-screen sticky top-0">
+                <div class="flex-grow">
+                    <h1 class="text-2xl font-bold text-slate-800">Chain Guard</h1>
+                    <p id="dashboardUser" class="text-sm text-slate-500 mt-2 mb-8"></p>
+                </div>
+                <button onclick="logout()" class="w-full text-left text-slate-600 hover:bg-slate-100 p-2 rounded-md">Logout</button>
+            </div>
+            <!-- Main Content -->
+            <main id="mainContent" class="flex-1 p-8 overflow-y-auto">
+                <!-- Content will be injected by app.js -->
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="addUserModal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-overlay"><div class="card w-full max-w-lg"><h2 class="text-2xl font-bold mb-6 text-slate-800">Add New User</h2><form id="addUserForm" class="space-y-4"><div><label for="newUserName" class="block text-sm font-medium text-slate-700 mb-1">User Name</label><input type="text" id="newUserName" class="input-field" required></div><div><label for="newUserRole" class="block text-sm font-medium text-slate-700 mb-1">Role</label><select id="newUserRole" class="input-field"><option value="manager">Logistic Manager</option><option value="vendor">Transport Vendor</option><option value="admin">System Admin</option></select></div><div class="flex justify-end space-x-4 pt-4"><button type="button" onclick="toggleModal('addUserModal', false)" class="btn-secondary">Cancel</button><button type="submit" class="btn-primary">Add User</button></div></form></div></div>
+    <div id="alertModal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-overlay"><div class="card w-full max-w-sm text-center"><p id="alertMessage" class="mb-6 text-lg text-slate-700"></p><button onclick="toggleModal('alertModal', false)" class="btn-primary">OK</button></div></div>
+    <div id="rejectionModal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-overlay"><div class="card w-full max-w-lg"><h2 class="text-2xl font-bold mb-6 text-slate-800">Rejection Reason</h2><form id="rejectionForm" class="space-y-4"><input type="hidden" id="rejectionDocId"><div><label for="rejectionReason" class="block text-sm font-medium text-slate-700 mb-1">Please provide a reason for rejection:</label><textarea id="rejectionReason" rows="4" class="input-field" required></textarea></div><div class="flex justify-end space-x-4 pt-4"><button type="button" onclick="toggleModal('rejectionModal', false)" class="btn-secondary">Cancel</button><button type="submit" class="btn-primary bg-red-600 hover:bg-red-700">Confirm Rejection</button></div></form></div></div>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = protectPage(['admin']);
+            if (user) {
+                document.getElementById('dashboardUser').textContent = `${user.name}`;
+                renderAdminDashboard();
+            }
+        });
+    </script>
+</body>
+</html>

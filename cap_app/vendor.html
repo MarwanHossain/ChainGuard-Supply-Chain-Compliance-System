@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard - Chain Guard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dashboard Template -->
+    <div class="w-full min-h-screen">
+        <div class="flex">
+            <!-- Sidebar -->
+            <div class="w-64 bg-white border-r border-slate-200 p-6 flex flex-col h-screen sticky top-0">
+                <div class="flex-grow">
+                    <h1 class="text-2xl font-bold text-slate-800">Chain Guard</h1>
+                    <p id="dashboardUser" class="text-sm text-slate-500 mt-2 mb-8"></p>
+                </div>
+                <button onclick="logout()" class="w-full text-left text-slate-600 hover:bg-slate-100 p-2 rounded-md">Logout</button>
+            </div>
+            <!-- Main Content -->
+            <main id="mainContent" class="flex-1 p-8 overflow-y-auto">
+                <!-- Content will be injected by app.js -->
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="documentModal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-overlay"><div class="card w-full max-w-lg"><h2 class="text-2xl font-bold mb-6 text-slate-800">Upload / Renew Document</h2><form id="documentUploadForm" class="space-y-4"><div class="mb-4"><label for="docType" class="block text-sm font-medium text-slate-700 mb-1">Document Type</label><select id="docType" class="input-field"><option>Trade License</option><option>Vehicle Registration</option><option>Driver's License</option><option>Goods-in-Transit Insurance</option><option>Tax Identification Number (TIN)</option><option>Road Permit</option></select></div><div class="mb-4"><label for="docNumber" class="block text-sm font-medium text-slate-700 mb-1">Document/License Number</label><input type="text" id="docNumber" class="input-field" required></div><div class="mb-4"><label for="docExpiry" class="block text-sm font-medium text-slate-700 mb-1">Expiry Date</label><input type="date" id="docExpiry" class="input-field" required></div><div class="flex justify-end space-x-4"><button type="button" onclick="toggleModal('documentModal', false)" class="btn-secondary">Cancel</button><button type="submit" class="btn-primary">Submit for Approval</button></div></form></div></div>
+    <div id="completionModal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-overlay"><div class="card w-full max-w-lg"><h2 class="text-2xl font-bold mb-6 text-slate-800">Confirm Shipment Delivery</h2><form id="completionForm" class="space-y-4"><input type="hidden" id="completionShipmentId"><div class="mb-4"><p class="text-lg text-slate-700">Shipment ID: <span id="modalShipmentId" class="font-semibold text-slate-900"></span></p><p id="modalShipmentDetails" class="text-sm text-slate-500 mt-1"></p></div><div class="mb-4"><label for="completionDate" class="block text-sm font-medium text-slate-700 mb-1">Completion Date</label><input type="date" id="completionDate" class="input-field" required></div><div class="mb-6"><label for="deliveryOtp" class="block text-sm font-medium text-slate-700 mb-1">Enter Delivery OTP</label><input type="text" id="deliveryOtp" class="input-field" placeholder="6-Digit OTP" required></div><div class="flex justify-end space-x-4"><button type="button" onclick="toggleModal('completionModal', false)" class="btn-secondary">Cancel</button><button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Confirm Delivery</button></div></form></div></div>
+    <div id="alertModal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-overlay"><div class="card w-full max-w-sm text-center"><p id="alertMessage" class="mb-6 text-lg text-slate-700"></p><button onclick="toggleModal('alertModal', false)" class="btn-primary">OK</button></div></div>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = protectPage(['vendor']);
+            if (user) {
+                document.getElementById('dashboardUser').textContent = `${user.name}`;
+                renderVendorDashboard();
+            }
+        });
+    </script>
+</body>
+</html>
