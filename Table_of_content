@@ -1,0 +1,129 @@
+From "Capstone Final Report.docx" file under cap_app You can get
+
+ChainGuard: Digital Supply Chain Compliance Tracker
+A Smart Compliance Monitoring System for Medicine Delivery in Bangladesh
+1. Introduction
+1.1 Objectives
+
+1.2 Key Features & Operations
+1.2.1 For Logistics Manager
+1.2.2 For Transport Vendor
+1.2.3 For System Admin
+
+1.3 ChainGuard Differentiators
+
+2. Scenario Writing
+2.1 FR01: Registration
+2.2 FR02: Login
+2.3 FR03: Schedule Shipments and Assign Routes
+2.4 FR04: Upload Documents
+2.5 FR05: Real-Time Shipment Tracking
+2.6 FR06: Cold Chain Monitoring
+2.7 FR07: Pickup & Drop-off Logging
+2.8 FR08: Proof of Delivery Submission
+2.9 FR09: Compliance Dashboard & Alerts
+2.10 FR10: User & Role Management
+2.11 FR11: Compliance Rule Configuration
+2.12 FR12: System Monitoring & Maintenance
+
+3. Stakeholder
+4. User Profile
+4.1 User Profile-01: Logistics Manager
+4.2 User Profile-02: Transport Vendor
+4.3 User Profile-03: System Admin
+
+5. Scope
+5.1 User Registration and Login
+5.2 Shipment Scheduling and Route Assignment
+5.3 Compliance Management
+5.4 Real-Time Tracking and Monitoring
+5.5 Delivery Event Logging
+5.6 Dashboards and Notifications
+5.7 User and Role Management
+5.8 Security and Maintenance
+
+6. Feasibility Study
+6.1 Technical Feasibility
+6.2 Operational Feasibility
+6.3 Economic Feasibility
+6.4 Scheduling Feasibility
+6.5 Security & Privacy Considerations
+
+7. Project Block Diagram
+7.1 Logistic Manager
+7.2 Transport Vendor
+7.3 System Admin
+
+8. Software Requirement Specification
+8.1 SRS
+8.2 Use Case Diagram
+8.3 Use Case Descriptions
+
+8.3.1 Registration
+8.3.2 Login
+8.3.3 Schedule Shipments and Assign Routes
+8.3.4 Upload Documents
+8.3.5 Real-Time Shipment Tracking
+8.3.6 Cold Chain Monitoring
+8.3.7 Pickup & Drop-off Logging
+8.3.8 Proof of Delivery Submission
+8.3.9 Compliance Dashboard & Alerts
+8.3.10 User & Role Management
+8.3.11 Compliance Rule Configuration
+8.3.12 System Monitoring & Maintenance
+
+9. System Design
+9.1 Data Flow Diagram
+
+9.1.1 Data Flow Diagram Level-0
+9.1.2 Data Flow Diagram Level-1
+9.1.3 Data Flow Diagram Level-2
+
+9.2 Activity Diagram
+9.2.1 Registration
+9.2.2 Login
+9.2.3 Schedule Shipments and Assign Routes
+9.2.4 Upload Documents
+9.2.5 Real-Time Shipment Tracking
+9.2.6 Cold Chain Monitoring
+9.2.7 Pickup & Drop-off Logging
+9.2.8 Proof of Delivery Submission
+9.2.9 Compliance Dashboard & Alerts
+9.2.10 User & Role Management
+9.2.11 Compliance Rule Configuration
+9.2.12 System Monitoring & Maintenance
+
+9.3 State Diagram
+9.3.1 Registration
+9.3.2 Login
+9.3.3 Schedule Shipments and Assign Routes
+9.3.4 Upload Documents
+9.3.5 Real-Time Shipment Tracking
+9.3.6 Cold Chain Monitoring
+9.3.7 Pickup & Drop-off Logging
+9.3.8 Proof of Delivery Submission
+9.3.9 Compliance Dashboard & Alerts
+9.3.10 User & Role Management
+9.3.11 Compliance Rule Configuration
+9.3.12 System Monitoring & Maintenance
+
+9.4 Sequence Diagram
+9.4.1 Registration
+9.4.2 Login
+9.4.3 Schedule Shipments and Assign Routes
+9.4.4 Upload Documents
+9.4.5 Real-Time Shipment Tracking
+9.4.6 Cold Chain Monitoring
+9.4.7 Pickup & Drop-off Logging
+9.4.8 Proof of Delivery Submission
+9.4.9 Compliance Dashboard & Alerts
+9.4.10 User & Role Management
+9.4.11 Compliance Rule Configuration
+9.4.12 System Monitoring & Maintenance
+
+9.5 Class Diagram
+
+9.6 ER Diagram
+
+10. Prototype
+11. References
